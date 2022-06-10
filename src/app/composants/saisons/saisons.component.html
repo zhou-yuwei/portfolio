@@ -1,0 +1,5 @@
+<div class="row" *ngIf="serie$ | async as serie">
+  <div class="card" style="width: 18rem;" *ngFor="let saison of serie.saisons">
+    <img class="img-fluid rounded card-img-top" [src]="saison.image" [alt]="saison.image">
+  </div>
+</div>

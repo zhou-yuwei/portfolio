@@ -1,0 +1,7 @@
+<div class="row" *ngIf="series$ | async as series">
+  <div class="card" style="width: 18rem;" *ngFor="let serie of series">
+    <a routerLink="/serie/{{serie.id}}">
+    <img class="img-fluid rounded card-img-top" [src]="serie.image" [alt]="serie.image">
+    </a>
+  </div>
+</div>

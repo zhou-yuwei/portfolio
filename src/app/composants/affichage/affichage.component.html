@@ -1,0 +1,24 @@
+<!--<div *ngIf="messages$ | async as messages">-->
+
+  <p *ngIf="messages.length == 0">
+    Auteur est obligatoire.
+  </p>
+  <div *ngIf="messages.length > 0">
+    <div *ngFor="let msg of messages">
+      <fieldset>
+        <legend>
+          {{msg.auteur.nom}}-{{msg.auteur.prenom}} a écrit le {{msg.date | date:'dd/mm/yyyy hh:mm'}}
+        </legend>
+        <p>
+          {{msg.message}}
+        </p>
+      </fieldset>
+    </div>
+  </div>
+  <div>
+    <label for="motClef"></label>
+    <input type="text" id="motClef" name="motClef" [(ngModel)]="motClef">
+    <button (click)="clicSurRecherche()">Rechercher</button>
+  </div>
+
+<!--/div-->
