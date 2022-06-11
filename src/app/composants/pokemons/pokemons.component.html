@@ -1,0 +1,14 @@
+<div>
+  <div *ngFor="let pokemon of pokemons">
+    <p>id : {{pokemon.id | number:'3.0-0'}}</p>
+    <p>Nom : {{pokemon.nom}}</p>
+    <img [src]="pokemon.image" [alt]="pokemon.nom">
+    <p>Taille : {{pokemon.taille / 100 | number:'1.0-2'}} m</p>
+    <p>
+      Type :
+      <span *ngFor="let type of pokemon.type">
+        {{type | lowercase}}
+      </span>
+    </p>
+  </div>
+</div>
