@@ -1,3 +1,4 @@
+<app-barre-nav></app-barre-nav>
 <div class="row" *ngIf="series$ | async as series">
   <div class="card" style="width: 18rem;" *ngFor="let serie of series">
     <a routerLink="/serie/{{serie.id}}">

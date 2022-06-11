@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PasswordGuard} from "../../password.guard";
 import {GuardService} from "../../services/guard.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-accueil',
@@ -11,7 +11,7 @@ export class AccueilComponent implements OnInit {
 
   public password: string;
 
-  constructor(private svc: GuardService) {
+  constructor(private svc: GuardService, private router: Router) {
     this.password = "";
   }
 
@@ -20,6 +20,9 @@ export class AccueilComponent implements OnInit {
 
   public clicGuard() {
     this.svc.password = this.password;
-    console.log(this.password);
+    //console.log(this.password);
+
+    this.router.navigate(['moi']);
+
   }
 }

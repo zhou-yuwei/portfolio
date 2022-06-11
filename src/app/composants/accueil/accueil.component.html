@@ -1,6 +1,11 @@
-<div>
+<!--div>
   <label for="question">Qui est ton formateur préféré ? </label>
   <input type="text" name="question" id="question" [(ngModel)]="password">
   <a routerLink="/moi"><button (click)="clicGuard()">Entrer ></button></a>
-</div>
+</div-->
 
+<form #form="ngForm" (ngSubmit)="clicGuard()">
+  <label for="question">Qui est ton formateur préféré ? </label>
+  <input type="text" name="question" id="question" autofocus="autofocus" [(ngModel)]="password">
+  <button (click)="clicGuard()">Entrer</button>
+</form>
